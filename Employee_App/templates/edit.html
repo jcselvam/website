@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <form method="POST" action="/update/{{employee.id}}">
+{% csrf_token %}
+<div>
+    <p>
+        <h3>Update Details</h3>
+    </p>
+</div>
+<div>
+    <p>
+        Employee Id:
+    </p>
+    <div>
+        <input type="text" name="EmpID" value="{{ employee.EmpID }}">
+    </div>
+</div>
+<div>
+    <p>
+        Employee FName:
+    </p>
+    <div>
+        <input type="text" name="EmpFName" value="{{ employee.EmpFName }}">
+    </div>
+</div>
+<div>
+    <p>
+        Employee LName:
+    </p>
+    <div>
+        <input type="text" name="EmpLName" value="{{ employee.EmpLName }}">
+    </div>
+</div>
+<div>
+    <p>
+        Employee Email:
+    </p>
+    <div>
+        <input type="text" name="EmpEmail" value="{{ employee.EmpMail }}">
+    </div>
+</div>
+<div>
+    <p>
+        Employee Contact:
+    </p>
+    <div>
+        <input type="text" name="EmpContact" value="{{ employee.EmpContact }}">
+    </div>
+</div>
+<div>
+    <p>
+        Employee Address:
+    </p>
+    <div>
+        <input type="text" name="EmpAddress" value="{{ employee.EmpAddress }}">
+    </div>
+</div>
+<br><br>
+<div>
+    <button type="submit">Update</button>
+</div>
+    </form>
+</body>
+</html>
